@@ -4,10 +4,20 @@
         <meta charset="utf-8">
         <title>Liveコメント</title>
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+      
+        <link rel=“stylesheet” href=“{{ asset(‘/css/li.css’)  }}” >
     </head>
     <body>
-        <h1>Live</h1>
+        <h1>Liveコメントタイムライン</h1>
+        <div>
+      <form action="/" method="GET">
+          @csrf
+        <input type="text" name="keyword" value="{{ $keyword }}">
+        <input type="submit" value="検索">
+      </form>
+      
+        </div>
+        <a href='/posts/create'>Liveコメント投稿画面</a>
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
