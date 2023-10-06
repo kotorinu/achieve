@@ -16,6 +16,7 @@ return new class extends Migration
        Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->string('artist_name', 50);
+            $table->date('theday');
             $table->string('venue', 50);
             $table->string('seat', 100);
             $table->string('stage_distance', 50);

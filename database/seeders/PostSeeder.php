@@ -18,6 +18,7 @@ class PostSeeder extends Seeder
     {
        DB::table('posts')->insert([
                 'artist_name' => 'アーティスト名',
+                'theday'=>'2023/10/04',
                 'venue' => '会場名',
                 'seat' => '座席位置',
                 'stage_distance' => '近さ',
@@ -28,6 +29,7 @@ class PostSeeder extends Seeder
                 'comment' => '感想',
                 'created_at' => new DateTime(),
                 'updated_at' => new DateTime(),
+                
          ]);
     }
 }
