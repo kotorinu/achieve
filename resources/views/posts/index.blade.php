@@ -5,14 +5,14 @@
         <title>Liveコメント</title>
         <!-- Fonts -->
       
-        <link rel=“stylesheet” href=“{{ asset(‘/css/li.css’)  }}” >
+       <link rel="stylesheet" href='/css/index.css' >
     </head>
     <body>
         <h1>Liveコメントタイムライン</h1>
         <div>
       <form action="/" method="GET">
           @csrf
-        <input type="text" name="keyword" value="{{ $keyword }}">
+        <input type="text" name="keyword" value="{{ $keyword }}" placeholder="キーワードを入力">
         <input type="submit" value="検索">
       </form>
       
@@ -21,13 +21,20 @@
         <div class='posts'>
             @foreach ($posts as $post)
             <div class='post'>
-                <h2 class='artist_name'><a href="/posts/{{ $post->id }}">{{ $post->artist_name }}</h2>
-                <p class='venue'>{{ $post->venue }}</p>
+                <p class='artist_name'>アーティスト名：{{ $post->artist_name }}</p>
+                <p class='venue'>会場名：{{ $post->venue }}</p>
+                <p class='theday'>日付：{{ $post->theday }}</p>
+                <p class='seat'>座席：{{ $post->seat }}</p>
+                <p class='stage_distance'>自分の座席位置からどのステージ（トロッコなど）が近いか：{{ $post->stage_distance }}<a href="/posts/{{ $post->id }}">...</a></p>
+                
+              
             </div>
             @endforeach
         </div>
         <div class='paginate'>
             {{ $posts->links() }}
         </div>
+       <script src='/js/index.js'></script>
+      
     </body>
 </html>
