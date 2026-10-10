@@ -1,5 +1,8 @@
 * text=auto
 
+# Windows で checkout しても Codespaces のコンテナで動くよう、シェルスクリプトは LF 固定
+*.sh text eol=lf
+
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
